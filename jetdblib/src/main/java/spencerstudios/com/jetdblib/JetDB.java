@@ -45,7 +45,7 @@ public class JetDB {
         editor.apply();     // This line is IMPORTANT !!!
     }
 
-    public static ArrayList<String> getIntList(Context ctx, String key) {
+    public static ArrayList<Integer> getIntList(Context ctx, String key) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
         Gson gson = new Gson();
         String json = prefs.getString(key, null);
