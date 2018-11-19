@@ -28,7 +28,7 @@ dependencies {
 }
 ```
 
-## Exampl Usage
+## Example Usage
 
 save List of customs objects:
 ```java
@@ -38,5 +38,14 @@ get List of custom objects:
 ```java
 List<User> users = JetDB.getListOfObjects(this, "usersKey", User.class);
 ```
+save ArrayList:
+```java
+JetDB.putStringList(this, listObj, "namesKey");
+```
+get ArrayList:
+```java
+ArrayList<String> names = JetDB.getStringList(this, "namesList");
+```
+
 
 
