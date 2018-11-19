@@ -55,6 +55,8 @@ get single data:
 boolean isActive = JetDB.getBoolean(context, "activeKey");
 ```
 
+Please note: other data types can be used (Integer, Float etc) in addition to the ones in the example usages above
+
 
 
 
