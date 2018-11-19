@@ -13,8 +13,6 @@ import java.util.List;
 
 public class JetDB {
 
-    //-------------------------- List<String> ----------------//
-
     public static void putStringList(Context ctx, ArrayList<String> list, String key) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
         SharedPreferences.Editor editor = prefs.edit();
