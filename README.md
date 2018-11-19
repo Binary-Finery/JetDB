@@ -4,9 +4,7 @@
 - min SDK 16 (Android Jellybean 4.1)
 - written in Java
 
-A lightweight, easy-to-use Android library that provides awesome activity transition animations.
-
-To download the demo app for this library from Google Playstore so you can see it in action,
+Simplified SharedPreferences, do it all in 1 line of code. JetDB goes the extra mile by allowing you to save/retreive ArrayLists and Lists of Objects with a simple, single line of code. It's never been easier.
 
 ## Installation
 
