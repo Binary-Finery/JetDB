@@ -30,3 +30,13 @@ dependencies {
 
 ## Exampl Usage
 
+save List of customs objects:
+```java
+JetDB.putListOfObjects(context, "usersKey", listObject);
+```
+get List of custom objects:
+```java
+List<User> users = JetDB.getListOfObjects(this, "usersKey", User.class);
+```
+
+
