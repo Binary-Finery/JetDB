@@ -7,7 +7,6 @@ import android.preference.PreferenceManager;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
@@ -123,7 +122,7 @@ public class JetDB {
     //-------------------------- List<Custom> ----------------//
 
 
-    public static <T> void putListOfObjects(Context ctx, String key, List<T> list) {
+    public static <T> void putListOfObjects(Context ctx, List<T> list, String key) {
         SharedPreferences db = PreferenceManager.getDefaultSharedPreferences(ctx);
         SharedPreferences.Editor editor = db.edit();
         Gson gson = new Gson();
@@ -131,7 +130,7 @@ public class JetDB {
         editor.putString(key, json).apply();
     }
 
-    public static <T> List<T> getListOfObjects(Context ctx, String key, Class<T> t) {
+    public static <T> List<T> getListOfObjects(Context ctx, Class<T> t, String key) {
         SharedPreferences db = PreferenceManager.getDefaultSharedPreferences(ctx);
         String content = db.getString(key, "");
         List<T> list;
