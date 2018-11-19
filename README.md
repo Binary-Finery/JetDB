@@ -32,20 +32,29 @@ dependencies {
 
 save List of customs objects:
 ```java
-JetDB.putListOfObjects(context, "usersKey", listObject);
+JetDB.putListOfObjects(context, listObject, "usersKey");
 ```
 get List of custom objects:
 ```java
-List<User> users = JetDB.getListOfObjects(this, "usersKey", User.class);
+List<User> users = JetDB.getListOfObjects(context, User.class, "usersKey");
 ```
 save ArrayList:
 ```java
-JetDB.putStringList(this, listObj, "namesKey");
+JetDB.putStringList(context, listObject, "namesKey");
 ```
 get ArrayList:
 ```java
-ArrayList<String> names = JetDB.getStringList(this, "namesList");
+ArrayList<String> names = JetDB.getStringList(context, "namesList");
 ```
+save single data:
+```java
+JetDB.putBoolean(context, true, "activeKey");
+```
+get single data:
+```java
+boolean isActive = JetDB.getBoolean(context, "activeKey");
+```
+
 
 
 
