@@ -30,7 +30,7 @@ dependencies {
 
 ## Example Usage
 
-save List of customs objects:
+save List of custom objects:
 ```java
 JetDB.putListOfObjects(context, listObject, "usersKey");
 ```
