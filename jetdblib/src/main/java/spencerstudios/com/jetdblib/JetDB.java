@@ -20,16 +20,23 @@ public class JetDB {
         Gson gson = new Gson();
         String json = gson.toJson(list);
         editor.putString(key, json);
-        editor.apply();     // This line is IMPORTANT !!!
+        editor.apply();
     }
 
     public static ArrayList<String> getStringList(Context ctx, String key) {
+        ArrayList<String> list;
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
         Gson gson = new Gson();
-        String json = prefs.getString(key, null);
-        Type type = new TypeToken<ArrayList<String>>() {
-        }.getType();
-        return gson.fromJson(json, type);
+        String json = prefs.getString(key, "");
+
+        if (json.isEmpty()) {
+            list = new ArrayList<>();
+        } else {
+            Type type = new TypeToken<ArrayList<String>>() {
+            }.getType();
+            list = gson.fromJson(json, type);
+        }
+        return list;
     }
 
     //-------------------------- List<Integer> ----------------//
@@ -40,16 +47,23 @@ public class JetDB {
         Gson gson = new Gson();
         String json = gson.toJson(list);
         editor.putString(key, json);
-        editor.apply();     // This line is IMPORTANT !!!
+        editor.apply();
     }
 
     public static ArrayList<Integer> getIntList(Context ctx, String key) {
+        ArrayList<Integer> list;
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
         Gson gson = new Gson();
-        String json = prefs.getString(key, null);
-        Type type = new TypeToken<ArrayList<Integer>>() {
-        }.getType();
-        return gson.fromJson(json, type);
+        String json = prefs.getString(key, "");
+
+        if(json.isEmpty()){
+            list = new ArrayList<>();
+        }else {
+            Type type = new TypeToken<ArrayList<Integer>>() {
+            }.getType();
+            list = gson.fromJson(json, type);
+        }
+        return list;
     }
 
 
@@ -61,16 +75,23 @@ public class JetDB {
         Gson gson = new Gson();
         String json = gson.toJson(list);
         editor.putString(key, json);
-        editor.apply();     // This line is IMPORTANT !!!
+        editor.apply();
     }
 
     public static ArrayList<Double> getDoubleList(Context ctx, String key) {
+        ArrayList<Double> list;
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
         Gson gson = new Gson();
-        String json = prefs.getString(key, null);
-        Type type = new TypeToken<ArrayList<Double>>() {
-        }.getType();
-        return gson.fromJson(json, type);
+        String json = prefs.getString(key, "");
+
+        if(json.isEmpty()){
+            list = new ArrayList<>();
+        }else {
+            Type type = new TypeToken<ArrayList<Double>>() {
+            }.getType();
+            list = gson.fromJson(json, type);
+        }
+        return list;
     }
 
 
@@ -87,12 +108,19 @@ public class JetDB {
     }
 
     public static ArrayList<Float> getFloatList(Context ctx, String key) {
+        ArrayList<Float> list;
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
         Gson gson = new Gson();
-        String json = prefs.getString(key, null);
-        Type type = new TypeToken<ArrayList<Float>>() {
-        }.getType();
-        return gson.fromJson(json, type);
+        String json = prefs.getString(key, "");
+
+        if(json.isEmpty()){
+            list = new ArrayList<>();
+        }else {
+            Type type = new TypeToken<ArrayList<Float>>() {
+            }.getType();
+            list = gson.fromJson(json, type);
+        }
+        return list;
     }
 
 
@@ -109,12 +137,18 @@ public class JetDB {
     }
 
     public static ArrayList<Boolean> getBooleanList(Context ctx, String key) {
+        ArrayList<Boolean> list;
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
         Gson gson = new Gson();
-        String json = prefs.getString(key, null);
-        Type type = new TypeToken<ArrayList<Boolean>>() {
-        }.getType();
-        return gson.fromJson(json, type);
+        String json = prefs.getString(key, "");
+        if(json.isEmpty()){
+            list = new ArrayList<>();
+        }else{
+            Type type = new TypeToken<ArrayList<Boolean>>() {
+            }.getType();
+           list = gson.fromJson(json, type);
+        }
+        return list;
     }
 
 
@@ -145,12 +179,12 @@ public class JetDB {
 
     //-----------------------string----------------------------------------//
 
-    public static String getString(Context ctx, String key){
+    public static String getString(Context ctx, String key) {
         SharedPreferences db = PreferenceManager.getDefaultSharedPreferences(ctx);
         return db.getString(key, "");
     }
 
-    public static void putString(Context ctx, String value, String key){
+    public static void putString(Context ctx, String value, String key) {
         SharedPreferences db = PreferenceManager.getDefaultSharedPreferences(ctx);
         SharedPreferences.Editor editor = db.edit();
         editor.putString(key, value).apply();
@@ -158,12 +192,12 @@ public class JetDB {
 
     //-----------------------int----------------------------------------//
 
-    public static int getInt(Context ctx, String key){
+    public static int getInt(Context ctx, String key, int defaultValue) {
         SharedPreferences db = PreferenceManager.getDefaultSharedPreferences(ctx);
-        return db.getInt(key, 0);
+        return db.getInt(key, defaultValue);
     }
 
-    public static void putInt(Context ctx, int value, String key){
+    public static void putInt(Context ctx, int value, String key) {
         SharedPreferences db = PreferenceManager.getDefaultSharedPreferences(ctx);
         SharedPreferences.Editor editor = db.edit();
         editor.putInt(key, value).apply();
@@ -171,12 +205,12 @@ public class JetDB {
 
     //-----------------------float----------------------------------------//
 
-    public static double getFloat(Context ctx, String key){
+    public static double getFloat(Context ctx, String key, float defaultValue) {
         SharedPreferences db = PreferenceManager.getDefaultSharedPreferences(ctx);
-        return db.getFloat(key, 0);
+        return db.getFloat(key, defaultValue);
     }
 
-    public static void putFloat(Context ctx, float value, String key){
+    public static void putFloat(Context ctx, float value, String key) {
         SharedPreferences db = PreferenceManager.getDefaultSharedPreferences(ctx);
         SharedPreferences.Editor editor = db.edit();
         editor.putFloat(key, value).apply();
@@ -184,12 +218,12 @@ public class JetDB {
 
     //-----------------------long----------------------------------------//
 
-    public static double getLong(Context ctx, String key){
+    public static double getLong(Context ctx, String key, long defaultValue) {
         SharedPreferences db = PreferenceManager.getDefaultSharedPreferences(ctx);
-        return db.getLong(key, 0);
+        return db.getLong(key, defaultValue);
     }
 
-    public static void putLong(Context ctx, long value, String key){
+    public static void putLong(Context ctx, long value, String key) {
         SharedPreferences db = PreferenceManager.getDefaultSharedPreferences(ctx);
         SharedPreferences.Editor editor = db.edit();
         editor.putLong(key, value).apply();
@@ -197,12 +231,12 @@ public class JetDB {
 
     //-----------------------boolean----------------------------------------//
 
-    public static boolean getBoolean(Context ctx, String key){
+    public static boolean getBoolean(Context ctx, String key, boolean defaultValue) {
         SharedPreferences db = PreferenceManager.getDefaultSharedPreferences(ctx);
-        return db.getBoolean(key, false);
+        return db.getBoolean(key, defaultValue);
     }
 
-    public static void putBoolean(Context ctx,boolean value, String key){
+    public static void putBoolean(Context ctx, boolean value, String key) {
         SharedPreferences db = PreferenceManager.getDefaultSharedPreferences(ctx);
         SharedPreferences.Editor editor = db.edit();
         editor.putBoolean(key, value).apply();
