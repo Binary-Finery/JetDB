@@ -24,7 +24,7 @@ Add the dependency to your module build.gradle:
 
 ```java
 dependencies {
-	implementation 'com.github.Binary-Finery:JetDB:1.0.2'
+	implementation 'com.github.Binary-Finery:JetDB:1.0.3'
 }
 ```
 
@@ -52,7 +52,7 @@ JetDB.putBoolean(context, true, "activeKey");
 ```
 get single data:
 ```java
-boolean isActive = JetDB.getBoolean(context, "activeKey");
+boolean isActive = JetDB.getBoolean(context, "activeKey", defaultValue);
 ```
 
 Please note: other data types can be used (Integer, Float etc) in addition to the ones in the example usages above
