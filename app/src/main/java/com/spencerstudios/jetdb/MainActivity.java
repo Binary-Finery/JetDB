@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         tv = findViewById(R.id.tv);
 
-       char [] chars = JetDB.getCharArray(this,"chars");
+       char [] chars = JetDB.getCharArray(this,"key");
+
     }
 }

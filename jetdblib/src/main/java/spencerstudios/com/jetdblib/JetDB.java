@@ -292,8 +292,8 @@ public class JetDB {
         list.clear();
     }
 
-    public static int [] getStringArray(Context ctx, String key) {
-        ArrayList<Integer> list;
+    public static String [] getStringArray(Context ctx, String key) {
+        ArrayList<String> list;
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
         Gson gson = new Gson();
         String json = prefs.getString(key, "");
@@ -306,7 +306,7 @@ public class JetDB {
             list = gson.fromJson(json, type);
         }
 
-        int [] array = new int[list.size()];
+        String [] array = new String[list.size()];
 
         for (int i = 0; i < list.size(); i++) {
             array[i] = list.get(i);
