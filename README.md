@@ -24,7 +24,7 @@ Add the dependency to your module build.gradle:
 
 ```java
 dependencies {
-	implementation 'com.github.Binary-Finery:JetDB:1.0.4'
+	implementation 'com.github.Binary-Finery:JetDB:1.0.5'
 }
 ```
 
