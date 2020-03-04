@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JetDB.iml" filepath="$PROJECT_DIR$/JetDB.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jetdblib/jetdblib.iml" filepath="$PROJECT_DIR$/jetdblib/jetdblib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JetDB.iml" filepath="$PROJECT_DIR$/JetDB.iml" group="JetDB" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="JetDB/app" />
+      <module fileurl="file://$PROJECT_DIR$/jetdblib/jetdblib.iml" filepath="$PROJECT_DIR$/jetdblib/jetdblib.iml" group="JetDB/jetdblib" />
     </modules>
   </component>
 </project>

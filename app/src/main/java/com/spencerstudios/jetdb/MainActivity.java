@@ -1,8 +1,11 @@
 package com.spencerstudios.jetdb;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import spencerstudios.com.jetdblib.JetDB;
 
@@ -18,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         tv = findViewById(R.id.tv);
 
        char [] chars = JetDB.getCharArray(this,"key");
+
 
     }
 }
